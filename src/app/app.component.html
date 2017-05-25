@@ -1,0 +1,7 @@
+<button (click)="onClickMe()" style="background-color:blue;color:white;padding:3px">Click me!</button>
+
+
+  <ul class="stack" swing-stack  [stackConfig]="stackConfig"  #myswing1 (throwout)="onThrowOut($event)">
+    <li swing-card #mycards1 [ngClass]="c.name" *ngFor="let c of cards | async; trackBy:trackByCards; let i=index"
+      [style.zIndex]="-1 * i">{{ c.symbol }}</li>
+  </ul>
